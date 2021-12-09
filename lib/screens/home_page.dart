@@ -4,7 +4,9 @@ import 'package:weather_app/provider/weather_provider.dart';
 import 'package:weather_app/utills/all_colors.dart';
 import 'package:weather_app/utills/all_size.dart';
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  String dVal;
+   MyHomePage({Key? key,required this.dVal})
+       : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -13,7 +15,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    Provider.of<WeatherProvider>(context,listen: false).getWeatherData();
+    Provider.of<WeatherProvider>(context,listen: false)
+        .getWeatherData(widget.dVal);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,

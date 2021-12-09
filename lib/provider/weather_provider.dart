@@ -7,11 +7,21 @@ class WeatherProvider with ChangeNotifier{
   WeatherModel _weatherModel = WeatherModel.demo();
   WeatherModel get weatherModel => _weatherModel;
   bool isLoading= true;
-  getWeatherData()async{
+  getWeatherData(String cityName)async{
     _weatherModel= await weatherRepo
-        .getDataFromApi();
+        .getDataFromApi(cityName);
     isLoading= false;
     notifyListeners();
   }
+// dropdown
+  List<String> cityList=[];
+  getCityList(){
+    cityList=weatherRepo.cityList;
+    notifyListeners();
+  }
 
+  changeValue(oldVal){
+    oldVal;
+    notifyListeners();
+  }
 }
