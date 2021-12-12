@@ -156,8 +156,8 @@ class Wind {
     required this.speed,
     required this.deg,
   });
-  late final double speed;
-  late final int deg;
+  late  var speed;
+  late  var deg;
 
   Wind.fromJson(Map<String, dynamic> json){
     speed = json['speed'];
@@ -197,11 +197,11 @@ class Sys {
     required this.sunrise,
     required this.sunset,
   });
-  late final int type;
-  late final int id;
-  late final String country;
-  late final int sunrise;
-  late final int sunset;
+  late  var type;
+  late  var id;
+  late  var country;
+  late  var sunrise;
+  late  var sunset;
 
   Sys.fromJson(Map<String, dynamic> json){
     type = json['type'];

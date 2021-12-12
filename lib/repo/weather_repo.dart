@@ -7,8 +7,21 @@ class WeatherRepo{
     http.Response response= await http.get(url);
     if(response.statusCode == 200){
       var weather= WeatherModel.fromJson(jsonDecode(response.body));
-      print("ssss");
-      print(response.statusCode);
+      //print("ssss");
+      //print(response.statusCode);
+      return weather;
+    }else{
+      throw Exception("Data not found");
+    }
+  }
+// get data by lat long
+  Future<WeatherModel> getDataFromApiByLatlong(lat,long)async{
+    var url= Uri.parse("http://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$long&appid=6b446c749b4846036320479dd64d4d8a");
+    http.Response response= await http.get(url);
+    if(response.statusCode == 200){
+      var weather= WeatherModel.fromJson(jsonDecode(response.body));
+      //print("ssss");
+      //print(response.statusCode);
       return weather;
     }else{
       throw Exception("Data not found");

@@ -10,8 +10,24 @@ class WeatherProvider with ChangeNotifier{
   getWeatherData(String cityName)async{
     _weatherModel= await weatherRepo
         .getDataFromApi(cityName);
+    notifyListeners();
     isLoading= false;
     notifyListeners();
+  }
+
+  //from lat long
+  getWeatherDataByLatLong(lat, long)async{
+    _weatherModel= await weatherRepo
+        .getDataFromApiByLatlong(lat, long);
+
+    notifyListeners();
+    isLoading= false;
+    notifyListeners();
+  }
+  // on back button press
+  backButtonPress(){
+    isLoading=true;
+    _weatherModel=WeatherModel.demo();
   }
 // dropdown
   List<String> cityList=[];
