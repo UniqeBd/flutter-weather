@@ -19,17 +19,17 @@ class _CurrentLocationPageState extends State<CurrentLocationPage> {
     super.initState();
     _determinePosition();
     print("hhhhhhhhh");
-    print(position!.latitude);
+   // print(position!.latitude);
   }
   @override
   Widget build(BuildContext context) {
+   // if(position?.longitude==null)
     Provider.of<WeatherProvider>(context,listen: false).getCityList();
     Provider.of<WeatherProvider>(context,listen: false)
-        .getWeatherDataByLatLong(position!.latitude,
-        position!.longitude);
+        .getWeatherDataByLatLong(position?.latitude,
+        position?.longitude);
 
-    print("hhhhhhhhh");
-    print(position!.latitude);
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Home"),
@@ -39,8 +39,11 @@ class _CurrentLocationPageState extends State<CurrentLocationPage> {
         builder: (context, weatherPro, child) {
           double width = MediaQuery.of(context).size.width;
           double height = MediaQuery.of(context).size.height;
-          String weather = weatherPro.weatherModel
+          String? weather;
+          weather = weatherPro.weatherModel
               .weather[0].main;
+          print("hhhhhhhhh");
+          //print(position!.latitude);
           return WillPopScope(
             onWillPop: ()async{
               weatherPro.backButtonPress();
@@ -51,7 +54,7 @@ class _CurrentLocationPageState extends State<CurrentLocationPage> {
               Container(
                 color: Colors.white,
                 child:
-                weatherPro.weatherModel.weather[0].main.isEmpty
+                weather.length<2
                     ? const CircularProgressIndicator()
                     :Column(
                   children: [

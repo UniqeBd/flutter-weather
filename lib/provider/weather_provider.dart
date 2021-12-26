@@ -25,9 +25,10 @@ class WeatherProvider with ChangeNotifier{
     notifyListeners();
   }
   // on back button press
-  backButtonPress(){
-    isLoading=true;
-    _weatherModel=WeatherModel.demo();
+  backButtonPress()async{
+    _weatherModel= await weatherRepo
+        .getDataFromApi("Tungipara");
+    notifyListeners();
   }
 // dropdown
   List<String> cityList=[];
