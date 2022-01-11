@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             : weather == 'Haze'
                             ? 'assets/gif/day-cold.gif'
                             : weather == 'Clear'
-                            ? 'assets/gif/hot.gif'
+                            ? 'assets/gif/day-cloud.gif'
                             : weather == 'Clouds'
                             ? 'assets/gif/day-cloud.gif'
                             : "assets/gif/day-cloud.gif"),

@@ -33,6 +33,13 @@ class WeatherRepo{
     "khulna",
     "London",
     "Mumbai",
-    "chenni"
+    "chenni",
+    "Chittagong",
+    "Rajshahi",
+    "Paris",
+    "Tokyo",
+    "Singapore",
+    "Los Angeles",
+    "Moscow"
   ];
 }
