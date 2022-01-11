@@ -55,6 +55,8 @@ class _MyHomePageState extends State<MyHomePage> {
                             ? 'assets/gif/day-cloud.gif'
                             : weather == 'Clouds'
                             ? 'assets/gif/day-cloud.gif'
+                            : weather == 'Fog'
+                            ? 'assets/gif/day-cold.gif'
                             : "assets/gif/day-cloud.gif"),
                       ),
                       Column(
