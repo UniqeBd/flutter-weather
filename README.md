@@ -221,7 +221,7 @@ This project is open source and available under the MIT License.
 
 **UniqeBd**
 - GitHub: [@UniqeBd](https://github.com/UniqeBd)
-- Email: alshan.213071042@smuct.ac.bd
+- Email: shoaibhossain2302@gmail.com
 
 ## 🙏 Acknowledgments
 
@@ -241,5 +241,6 @@ This project is open source and available under the MIT License.
 ---
 
 **⭐ Star this repository if you found it helpful!**
+
 
 
